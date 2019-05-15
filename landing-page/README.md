@@ -70,6 +70,24 @@ Partindo da pontuação inicial 10, as seguintes condições modificam a pontua�
 ## Banco de dados
 A modelagem e a tecnologia escolhida ficam a seu critério, mas queremos ver no código a implementação para inserir os dados no banco ;)
 
+## Envio de leads:
+Os dados de cada lead deverão ser enviados via POST para o endpoint http://api.actualsales.com.br/join-asbr/ti/lead
+
+Parâmetros esperados:
+
+- nome (String)
+- email (String)
+- telefone (String)
+- regiao (Elemento do conjunto ["Norte", "Nordeste", "Sul", "Sudeste", "Centro-Oeste"])
+- unidade (Elemento do conjunto ["Porto Alegre", "Curitiba", "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Brasília", "Salvador", "Recife", "INDISPONÍVEL"])
+- data_nascimento (data no formato YYYY-mm-dd)
+- score (int de 0 a 10)
+- token (String)
+
+Para obter o token basta acessar o link a seguir substituindo o email do parâmetro pelo seu. Ex: http://api.actualsales.com.br/join-asbr/ti/token?email=vagas-ti@actualsales.com.br
+
+Uma vez obtido, o token não sofrerá alteração (mas poderá ser consultado novamente, caso necessário).
+
 ## Dúvidas?
 É só mandar um e-mail para <vagas-ti@actualsales.com.br>.
 
