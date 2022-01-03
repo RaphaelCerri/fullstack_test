@@ -1,9 +1,9 @@
 
-# Venha trabalhar na ActualSales!
+# Venha trabalhar na AddSales!
 
 ## A Empresa
 
-A ActualSales é uma empresa de marketing digital focada em geração de leads através de Landing Pages.
+A AddSales é uma empresa de marketing digital focada em geração de leads através de Landing Pages.
 
 ## Vagas
 ---
@@ -25,7 +25,7 @@ Precisamos de alguém com um bom conhecimento em programação e muita vontade c
 
 
 #### Como me candidatar?
-Envie o seu currículo para vagas-ti@actualsales.com.br
+Envie o seu currículo para jobs@addsales.com
 Faça o teste técnico. (Abaixo)
 
 #### Teste técnico
@@ -40,7 +40,7 @@ As instruções para execução desse teste estão localizadas *na pasta* **land
 - Bônus mensal por performance
 
 #### Dúvidas
-Para dúvidas ou mais informações, fique à vontade para nos contactar através do email <vagas-ti@actualsales.com.br>.
+Para dúvidas ou mais informações, fique à vontade para nos contactar através do email <jobs@addsales.com>.
 
 
 ## Obrigado e boa sorte!

@@ -1,12 +1,12 @@
-
 # Teste de aptidões
+
 ## Introdução
 Para avaliar um pouco do seu conhecimento técnico e da sua forma de resolver problemas, propomos um breve desafio.
 Ele consiste em programar o backend de uma landing page simples, atendendo a algumas regras de negócio definidas abaixo.
 
 Fique a vontade para utilizar a linguagem e framework que mais te agradam, porém não esqueça de deixar no readme instruções para que seu projeto possa ser executado.
 
-A solução deve ser desenvolvida usando o Git como controle de versão, podendo ser via fork nesse repositório ou entregue por email (vagas-ti@actualsales.com.br). 
+A solução deve ser desenvolvida usando o Git como controle de versão, podendo ser via fork nesse repositório ou entregue por email (jobs@addsales.com). 
 **Atenção: ZIPs não serão aceitos como entrega. Mande a URL pública do seu repo** 
 
 Para que possamos avaliar a sua evolução no projeto, pedimos que faça os commits progressivamente ao invés de um único e grande commit no final.
@@ -61,7 +61,7 @@ Partindo da pontuação inicial 10, as seguintes condições modificam a pontua�
 - Norte: -5 pontos
 
 ### Idade
-**ATENÇÃO: Para o cálculo da idade, considerar a data atual fixa em 01/11/2019**
+**ATENÇÃO: Para o cálculo da idade, considerar a data atual fixa em 01/11/2021**
 
 - A partir de 100 ou menor que 18: -5 pontos
 - Entre 40 e 99: -3 pontos
@@ -71,7 +71,7 @@ Partindo da pontuação inicial 10, as seguintes condições modificam a pontua�
 A modelagem e a tecnologia escolhida ficam a seu critério, mas queremos ver no código a implementação para inserir os dados no banco ;)
 
 ## Envio de leads:
-Os dados de cada lead deverão ser enviados via POST para o endpoint http://api.actualsales.com.br/join-asbr/ti/lead
+Os dados de cada lead deverão ser enviados via POST para o endpoint https://api-bra1.addsales.com/join-asbr/ti/lead
 
 Parâmetros esperados:
 
@@ -84,11 +84,11 @@ Parâmetros esperados:
 - score (int de 0 a 10)
 - token (String)
 
-Para obter o token basta acessar o link a seguir substituindo o email do parâmetro pelo seu. Ex: http://api.actualsales.com.br/join-asbr/ti/token?email=vagas-ti@actualsales.com.br
+Para obter o token basta acessar o link a seguir substituindo o email do parâmetro pelo seu. Ex: https://api-bra1.addsales.com/join-asbr/ti/token?email=jobs@addsales.com
 
 Uma vez obtido, o token não sofrerá alteração (mas poderá ser consultado novamente, caso necessário).
 
 ## Dúvidas?
-É só mandar um e-mail para <vagas-ti@actualsales.com.br>.
+É só mandar um e-mail para <jobs@addsales.com>.
 
 Obrigado e boa sorte!
