@@ -56,7 +56,7 @@
                                     </div>
 
                                     <div>
-                                        <input type="submit" form="step_1" value="Próximo Passo" class="btn btn-lg btn-info next-step"></input>
+                                        <input type="submit" form="step_1" value="Próximo Passo" class="btn btn-lg btn-info next-1 next-step"></input>
                                     </div>
                                 </fieldset>
                             </div>
@@ -76,26 +76,34 @@
                                         <div class="col-lg-6">
                                             <label>Região</label>
                                             <select class="form-control" name="regiao" id="reg">
-                                                <option value="">Selecione a sua região</option>
-                                                <option>Sul</option>
-                                                <option>Sudeste</option>
-                                                <option>Centro-Oeste</option>
-                                                <option>Nordeste</option>
-                                                <option>Norte</option>
+                                                <option selected disabled>Selecione a sua região</option>
+                                                <option id="Sul" value="Sul">Sul</option>
+                                                <option id="Sudeste" value="Sudeste">Sudeste</option>
+                                                <option id="Centro-Oeste" value="Centro-Oeste">Centro-Oeste</option>
+                                                <option id="Nordeste" value="Nordeste">Nordeste</option>
+                                                <option id="Norte" value="Norte">Norte</option>
                                             </select>
                                         </div>
-
+                                        <input type="hidden" id="score" value="10">
                                         <div class="col-lg-6">
                                             <label>Unidade</label>
                                             <select class="form-control" name="unidade" id="unid">
-                                                <option value="">Selecione a unidade mais próxima</option>
-                                                <option>???</option>
+                                                <option selected disabled>Selecione a unidade mais próxima</option>
+                                                <option id="be" style="display:none">Belo Horizonte</option>
+                                                <option id="br" style="display:none">Brasília</option>
+                                                <option id="cu" style="display:none">Curitiba</option>
+                                                <option id="pa" style="display:none">Porto Alegre</option>
+                                                <option id="re" style="display:none">Recife</option>
+                                                <option id="ri" style="display:none">Rio de Janeiro</option>
+                                                <option id="sa" style="display:none">Salvador</option>
+                                                <option id="sp" style="display:none">São Paulo</option>
+                                                <option id="not" style="display:none">Não possui disponibilidade</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <input type="submit" form="step_2" value="Enviar" class="btn btn-lg btn-info next-step send"></input>
+                                        <input type="submit" form="step_2" value="Enviar" class="btn btn-lg btn-info next-step next-2 send"></input>
                                     </div>
                                 </fieldset>
                             </div>
@@ -123,9 +131,88 @@
         </div>
         <script>
             $(function () {
-                $('.next-step').click(function (event) {
-                    event.preventDefault();
-                    $(this).parents('.form-step').hide().next().show();
+                $('.next-1').click(function (event) {
+                    event.preventDefault();       
+                    var v_name = $('#name').val();
+                    var v_data_nasc = $('#data_nasc').val();
+                    var v_email = $('#email').val();
+                    var v_tel = $('#tel').val();
+                    if(!(v_name != '' && v_tel != '' && v_email != '' && v_data_nasc != '')){
+                        return false;
+                    } else {
+                        $(this).parents('.form-step').hide().next().show();
+                    }
+                });
+                
+                $('.next-2').click(function (event) {
+                        event.preventDefault();
+                        var v_reg = $('#reg').val();
+                        var v_unid = $('#unid').val();
+                        if(v_unid == null || v_reg == null || v_unid == 'Não possui disponibilidade'){
+                            return false;
+                        } else {
+                            $(this).parents('.form-step').hide().next().show(); 
+                        }
+                });
+                $(document).ready(function(){
+                    $("#reg").change(function(){
+                        if($("#reg").val() == 'Sul'){
+                            $('#score').val('8');
+                            $("#cu").css("display","block");
+                            $("#pa").css("display","block");
+                            $("#br").css("display","none");
+                            $("#be").css("display","none");
+                            $("#re").css("display","none");
+                            $("#ri").css("display","none");
+                            $("#sa").css("display","none");
+                            $("#sp").css("display","none");
+                            $("#not").css("display","none");
+                        }if($("#reg").val() == 'Sudeste'){
+                            $('#score').val('9');
+                            $("#cu").css("display","none");
+                            $("#pa").css("display","none");
+                            $("#br").css("display","none");
+                            $("#be").css("display","block");
+                            $("#re").css("display","none");
+                            $("#ri").css("display","block");
+                            $("#sa").css("display","none");
+                            $("#sp").css("display","block");
+                            $("#not").css("display","none");
+                        }if($("#reg").val() == 'Centro-Oeste'){
+                            $('#score').val('7');
+                            $("#cu").css("display","none");
+                            $("#pa").css("display","none");
+                            $("#br").css("display","block");
+                            $("#be").css("display","none");
+                            $("#re").css("display","none");
+                            $("#ri").css("display","none");
+                            $("#sa").css("display","none");
+                            $("#sp").css("display","none");
+                            $("#not").css("display","none");
+                        }if($("#reg").val() == 'Nordeste'){
+                            $('#score').val('6');
+                            $("#cu").css("display","none");
+                            $("#pa").css("display","none");
+                            $("#br").css("display","none");
+                            $("#be").css("display","none");
+                            $("#re").css("display","block");
+                            $("#ri").css("display","none");
+                            $("#sa").css("display","block");
+                            $("#sp").css("display","none");
+                            $("#not").css("display","none");
+                        }if($("#reg").val() == 'Norte'){
+                            $('#score').val('5');
+                            $("#cu").css("display","none");
+                            $("#pa").css("display","none");
+                            $("#br").css("display","none");
+                            $("#be").css("display","none");
+                            $("#re").css("display","none");
+                            $("#ri").css("display","none");
+                            $("#sa").css("display","none");
+                            $("#sp").css("display","none");
+                            $("#not").css("display","block");
+                        }
+                    });
                 });
                 $('.send').click(function (event) {
                     event.preventDefault();
@@ -136,10 +223,6 @@
                     var v_tel = $('#tel').val();
                     var v_reg = $('#reg').val();
                     var v_unid = $('#unid').val();
-
-                    var v_score = 1;
-
-
                     const date = new Date(v_data_nasc);                 
                     const formatter = Intl.DateTimeFormat('pt-BR', {
                         dateStyle: "short"
@@ -150,18 +233,44 @@
                     var telValid = v_tel.length;
                     var emailValid = v_email.includes('@');
                     var dataValid = (v_data_nasc.match(/-/g) || []).length;
-
-                    if(nameTrim != null && v_tel != null && v_email != null <= 11 && date_nasc_form != null){// && v_reg != null && v_unid != null
+                    if(nameTrim != null && v_tel != null && v_email != null && date_nasc_form != null && v_reg != null && v_unid != null && v_unid != 'Não possui disponibilidade'){
                         if(nameValid && telValid >= 10 && telValid <= 11 && emailValid && dataValid == 2){
-                            console.log('true');
+                            var validate = true;
+                        } else {
+                            var validate = false;
                         }
-                        console.log('false');
                     } else {
-                        console.log('false');
-                        //retornar mensagem de que x campo ta errado
+                        var validate = false;
                     }
+                    if(v_unid == null || v_reg == null || v_unid == 'Não possui disponibilidade'){
+                        return false;
+                    }
+                    function idade(ano_aniversario, mes_aniversario, dia_aniversario) {
+                        var d = new Date,
+                            ano_atual = d.getFullYear(),
+                            mes_atual = d.getMonth() + 1,
+                            dia_atual = d.getDate(),
+                            ano_aniversario = +ano_aniversario,
+                            mes_aniversario = +mes_aniversario,
+                            dia_aniversario = +dia_aniversario,
+                            quantos_anos = ano_atual - ano_aniversario;
+                        if (mes_atual < mes_aniversario || mes_atual == mes_aniversario && dia_atual < dia_aniversario) {
+                            quantos_anos--;
+                        }
+                        return quantos_anos < 0 ? 0 : quantos_anos;
+                    }
+                    var idade = idade(ano_nasc = date_nasc_form.slice(6, 11), mes_nasc = date_nasc_form.slice(3, 5), dia_nasc = date_nasc_form.slice(0, 2));
+                    var score = $('#score').val();
+                    if(idade >= 100 || idade < 18){
+                        $('#score').val($('#score').val() - 5);
+                    }if(idade >= 40 && idade <= 99){
+                        $('#score').val($('#score').val() - 3);
+                    }
+                    var v_score = $('#score').val();
 
-                    $.ajax({
+                    if (validate) {
+                        console.log('entrou');
+                        $.ajax({
                         url: 'http://as/fullstack-test/landing-page/functions.php',
                         method: 'POST',
                         data: {
@@ -174,9 +283,10 @@
                             score: v_score
                         },
                         dataType: 'json'
-                    }).done(function(result){
-                        console.log(result);
-                    })
+                        }).done(function(result){
+                            console.log(result);
+                        })
+                    }
                 });
             });
         </script>
